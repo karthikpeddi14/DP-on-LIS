@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 int longestIncreasingSubsequence(int arr[], int n)
 {
-    vector<int> ans = {INT_MIN};
-    for(int i=0 ; i<n ; i++)
+    vector<int> ans = {arr[0]};
+    for(int i=1 ; i<n ; i++)
     {
         int start = 0;
         int end = ans.size()-1;
@@ -16,5 +16,5 @@ int longestIncreasingSubsequence(int arr[], int n)
         if(start>=ans.size()) ans.push_back(arr[i]);
         else ans[start] = arr[i];
     }
-    return ans.size()-1;
+    return ans.size();
 }
